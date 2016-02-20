@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "outDir": "dist/app",
     "target": "es5",
     "module": "system",
     "moduleResolution": "node",
@@ -7,11 +8,24 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "removeComments": false,
-    "noImplicitAny": false
+    "noImplicitAny": true,
+    "suppressImplicitAnyIndexErrors": true
   },
+  "filesGlob": [
+    "app/**/*.ts",
+    "typings/**/*.d.ts"
+  ],
   "exclude": [
     "node_modules",
     "typings/main",
     "typings/main.d.ts"
+  ],
+  "files": [
+    "typings/browser.d.ts",
+    "typings/browser/ambient/es6-shim/es6-shim.d.ts",
+    "typings/main.d.ts",
+    "typings/main/ambient/es6-shim/es6-shim.d.ts",
+    "app/app.component.ts",
+    "app/main.ts"
   ]
 }

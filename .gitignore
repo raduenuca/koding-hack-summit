@@ -29,6 +29,13 @@ node_modules
 # Typings directory
 typings
 
+# Dist directory
+dist
+app/**/*.js
+app/**/*.map
+jspm_packages
+bower_components
+
 # Optional npm cache directory
 .npm
 
