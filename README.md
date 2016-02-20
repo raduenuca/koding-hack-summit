@@ -14,13 +14,14 @@ Repository for the Koding Hack Summit 2016
 * As a team member, I can only view my own timesheets
 * As a team member, I can submmit my timesheet to the team leader
 
-#### MVP (Minimum Viable Product)
-* As a user, I can enter a timesheet line
-* As a user, I can view my own timesheet
-
 ### Technology
 * Angular 2
 * TypeScript
 * Firebase
 * Gulp
 * TBD
+*
+
+### Spikes
+* (DONE) Choose a layout framework (Bootstrap, Material, etc.)
+* Create users
