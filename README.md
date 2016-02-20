@@ -24,4 +24,6 @@ Repository for the Koding Hack Summit 2016
 
 ### Spikes
 * (DONE) Choose a layout framework (Bootstrap, Material, etc.)
-* Create users
+* (DONE) Create routes and components for them
+* Add SCSS and refactor gulp files
+* Add Firebase autentification (
