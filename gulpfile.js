@@ -7,7 +7,7 @@ const tslint = require('gulp-tslint');
 const browserSync = require('browser-sync');
 const reload = browserSync.reload;
 const tsconfig = require('tsconfig-glob');
-var rsync = require('gulp-rsync');
+const rsync = require('gulp-rsync');
 
 // clean the contents of the distribution directory
 gulp.task('clean', function () {
@@ -24,14 +24,18 @@ gulp.task('copy:assets', ['clean'], function() {
 gulp.task('copy:libs', ['clean'], function() {
   return gulp.src([
       'node_modules/angular2/bundles/angular2-polyfills.js',
-      'node_modules/systemjs/dist/system.src.js',
-      'node_modules/rxjs/bundles/Rx.js',
       'node_modules/angular2/bundles/angular2.dev.js',
-      'node_modules/angular2/bundles/router.dev.js'//,
+      'node_modules/angular2/bundles/router.dev.js',
+      'node_modules/bootstrap/dist/css/bootstrap.min.css',
+      'node_modules/bootstrap/dist/fonts/**/*',
+      'node_modules/moment/moment.js',
+      'node_modules/ng2-bootstrap/bundles/ng2-bootstrap.min.js',
+      'node_modules/systemjs/dist/system.src.js',
+      'node_modules/rxjs/bundles/Rx.js'//,
       // 'node_modules/node-uuid/uuid.js',
       // 'node_modules/immutable/dist/immutable.js'
-    ])
-    .pipe(gulp.dest('dist/lib'))
+    ], { base : './node_modules' })
+    .pipe(gulp.dest('dist/lib'));
 });
 
 // linting
