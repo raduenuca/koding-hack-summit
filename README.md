@@ -1,6 +1,7 @@
 # Introduction
 
 [![Build Status](https://travis-ci.org/raduenuca/koding-hack-summit.svg?branch=master)](https://travis-ci.org/raduenuca/koding-hack-summit)
+[![Gitter](https://badges.gitter.im/raduenuca/koding-hack-summit.svg)](https://gitter.im/raduenuca/koding-hack-summit?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=body_badge)
 [![MIT license](http://img.shields.io/badge/license-MIT-brightgreen.svg)](http://opensource.org/licenses/MIT)
 [![Dependency Status](https://david-dm.org/raduenuca/koding-hack-summit.svg)](https://david-dm.org/raduenuca/koding-hack-summit)
 [![devDependency Status](https://david-dm.org/raduenuca/koding-hack-summit/dev-status.svg)](https://david-dm.org/raduenuca/koding-hack-summit#info=devDependencies)
