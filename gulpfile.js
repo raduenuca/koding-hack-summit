@@ -7,6 +7,7 @@ const tslint = require('gulp-tslint');
 const browserSync = require('browser-sync');
 const reload = browserSync.reload;
 const tsconfig = require('tsconfig-glob');
+var rsync = require('gulp-rsync');
 
 // clean the contents of the distribution directory
 gulp.task('clean', function () {
@@ -69,6 +70,15 @@ gulp.task('serve', ['build'], function() {
   });
 
   gulp.watch(['app/**/*', 'index.html', 'styles.css'], ['buildAndReload']);
+});
+
+gulp.task('deploy', ['build'], function() {
+  gulp.src('dist/**')
+    .pipe(rsync({
+      root: 'dist',
+      hostname: 'koding',
+      destination: 'Web'
+    }));
 });
 
 gulp.task('build', ['tslint', 'compile', 'copy:libs', 'copy:assets']);

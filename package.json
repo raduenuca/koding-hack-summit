@@ -36,11 +36,12 @@
     "concurrently": "^1.0.0",
     "del": "^2.1.0",
     "gulp": "^3.9.0",
+    "gulp-rsync": "0.0.5",
     "gulp-sourcemaps": "^1.6.0",
     "gulp-tslint": "^3.6.0",
     "gulp-typescript": "^2.8.0",
-    "tsconfig-glob": "^0.3.3",
     "lite-server": "^2.0.1",
+    "tsconfig-glob": "^0.3.3",
     "typescript": "^1.7.5",
     "typings": "^0.6.8"
   },
