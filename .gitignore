@@ -24,20 +24,29 @@ coverage
 build/Release
 
 # Dependency directory
-node_modules
+/node_modules/
+/typings/
 
-# Typings directory
-typings
+# Users Environment Variables
+.lock-wscript
+.tsdrc
+.typingsrc
 
-# Dist directory
-dist
-app/**/*.js
-app/**/*.map
-jspm_packages
-bower_components
+#IDE configuration files
+.idea
+.vscode
+*.iml
 
 # Optional npm cache directory
 .npm
 
 # Optional REPL history
 .node_repl_history
+
+
+dist
+dev
+docs
+lib
+test
+tmp
