@@ -11,7 +11,11 @@
 </head>
 <body>
 
-  <app>Loading...</app>
+  <timesheet-app>
+    <div id="loaderwrap">
+      <div class="loader">Loading...</div>
+    </div>
+  </timesheet-app>
 
   <script>
   // function.name (all IE)
@@ -30,7 +34,7 @@
     });
   }
   </script>
-  
+
   <script>
   // Fixes undefined module function in SystemJS bundle
   function module() {}
@@ -54,7 +58,7 @@
   System.import('<%= BOOTSTRAP_MODULE %>')
     .catch(function (e) {
       console.error(e,
-        'Report this error at https://github.com/mgechev/angular2-seed/issues');
+        'Report this error at https://github.com/raduenuca/koding-hack-summit/issues');
     });
   </script>
   <% } %>

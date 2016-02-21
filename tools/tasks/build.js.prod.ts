@@ -3,7 +3,7 @@ import {APP_SRC, TMP_DIR} from '../config';
 import {templateLocals, tsProjectFn} from '../utils';
 
 const INLINE_OPTIONS = {
-  base: TMP_DIR ,
+  base: TMP_DIR,
   useRelativePaths: true,
   removeLineBreaks: true
 };
@@ -14,7 +14,7 @@ export = function buildJSProd(gulp, plugins) {
     let src = [
       'typings/browser.d.ts',
       'tools/manual_typings/**/*.d.ts',
-      join(APP_SRC, '**/*.ts'),
+      join(APP_SRC, '**', '*.ts'),
       '!' + join(APP_SRC, '**/*.spec.ts'),
       '!' + join(APP_SRC, '**/*.e2e.ts')
     ];

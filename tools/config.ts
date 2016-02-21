@@ -11,11 +11,11 @@ const ENVIRONMENTS = {
   PRODUCTION: 'prod'
 };
 
-export const PORT                 = argv['port']        || 5555;
+export const PORT                 = argv['port']        || 8081;
 export const PROJECT_ROOT         = normalize(join(__dirname, '..'));
 export const ENV                  = getEnvironment();
 export const DEBUG                = argv['debug']       || false;
-export const DOCS_PORT            = argv['docs-port']   || 4003;
+export const DOCS_PORT            = argv['docs-port']   || 8082;
 export const APP_BASE             = argv['base']        || '/';
 
 export const ENABLE_HOT_LOADING   = !!argv['hot-loader'];
@@ -23,7 +23,7 @@ export const HOT_LOADER_PORT      = 5578;
 
 export const BOOTSTRAP_MODULE     = ENABLE_HOT_LOADING ? 'hot_loader_main' : 'main';
 
-export const APP_TITLE            = 'My Angular2 App';
+export const APP_TITLE            = 'Timesheets';
 
 export const APP_SRC              = 'src';
 export const ASSETS_SRC           = `${APP_SRC}/assets`;
@@ -70,7 +70,8 @@ export const DEV_NPM_DEPENDENCIES: InjectableDependency[] = normalizeDependencie
   { src: 'rxjs/bundles/Rx.js', inject: 'libs', dest: JS_DEST },
   { src: 'angular2/bundles/angular2.js', inject: 'libs', dest: JS_DEST },
   { src: 'angular2/bundles/router.js', inject: 'libs', dest: JS_DEST },
-  { src: 'angular2/bundles/http.js', inject: 'libs', dest: JS_DEST }
+  { src: 'angular2/bundles/http.js', inject: 'libs', dest: JS_DEST },
+  { src: 'ng2-bootstrap/bundles/ng2-bootstrap.js', inject: 'libs', dest: JS_DEST }
 ]);
 
 export const PROD_NPM_DEPENDENCIES: InjectableDependency[] = normalizeDependencies([
@@ -83,6 +84,7 @@ export const PROD_NPM_DEPENDENCIES: InjectableDependency[] = normalizeDependenci
 
 // Declare local files that needs to be injected
 export const APP_ASSETS: InjectableDependency[] = [
+  { src: 'node_modules/bootstrap/dist/css/bootstrap.css', inject: true, dest: CSS_DEST },
   { src: `${ASSETS_SRC}/main.css`, inject: true, dest: CSS_DEST }
 ];
 
@@ -103,7 +105,10 @@ const SYSTEM_CONFIG_DEV = {
   },
   packages: {
     angular2: { defaultExtension: false },
-    rxjs: { defaultExtension: false }
+    rxjs: { defaultExtension: false },
+  },
+  map: {
+    moment: 'moment/moment.js'
   }
 };
 
@@ -113,6 +118,7 @@ export const SYSTEM_BUILDER_CONFIG = {
   defaultJSExtensions: true,
   paths: {
     [`${TMP_DIR}/*`]: `${TMP_DIR}/*`,
+    'moment': 'node_modules/moment/moment.js',
     '*': 'node_modules/*'
   }
 };

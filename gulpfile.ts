@@ -6,6 +6,7 @@ import {runSequence, task} from './tools/utils';
 gulp.task('clean', done => task('clean', 'all')(done));
 gulp.task('clean.dev', done => task('clean', 'dev')(done));
 gulp.task('clean.prod', done => task('clean', 'prod')(done));
+gulp.task('clean.gen.css', done => task('clean', 'css')(done));
 gulp.task('check.versions', () => task('check.versions'));
 gulp.task('build.docs', () => task('build.docs'));
 gulp.task('serve.docs', () => task('serve.docs'));
@@ -15,9 +16,11 @@ gulp.task('serve.docs', () => task('serve.docs'));
 gulp.task('build.dev', done =>
   runSequence('clean.dev',
               'tslint',
+              'build.sass.dev',
               'build.assets.dev',
               'build.js.dev',
               'build.index.dev',
+              'clean.gen.css',
               done));
 
 // --------------
@@ -42,12 +45,14 @@ gulp.task('build.e2e', done =>
 gulp.task('build.prod', done =>
   runSequence('clean.prod',
               'tslint',
+              'build.sass.prod',
               'build.assets.prod',
               'build.html_css.prod',
               'build.js.prod',
               'build.bundles',
               'build.bundles.app',
               'build.index.prod',
+              'clean.gen.css',
               done));
 
 // --------------

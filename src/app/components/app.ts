@@ -9,7 +9,7 @@ import {AboutCmp} from '../../about/components/about';
 import {NameList} from '../../shared/services/name_list';
 
 @Component({
-  selector: 'app',
+  selector: 'timesheet-app',
   viewProviders: [NameList],
   moduleId: module.id,
   templateUrl: './app.html',
@@ -21,4 +21,4 @@ import {NameList} from '../../shared/services/name_list';
   { path: '/', component: HomeCmp, name: 'Home' },
   { path: '/about', component: AboutCmp, name: 'About' }
 ])
-export class AppCmp {}
+export class TimesheetApp {}
